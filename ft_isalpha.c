@@ -1,11 +1,11 @@
 int	ft_isalpha(int c)
 {
-	int	i;
+	int	ascii;
 
-	i = c - 0;
-	if (i >= 'A' && i <= 'Z')
-		return (i);
-	if (i >= 'a' && i <= 'z')
-		return (i);
+	ascii = c - 0;
+	if (ascii >= 'A' && ascii <= 'Z')
+		return (ascii);
+	if (ascii >= 'a' && ascii <= 'z')
+		return (ascii);
 	return (0);
 }
