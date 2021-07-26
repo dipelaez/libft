@@ -1,6 +1,8 @@
 #include	"libft.h"
 #include	<ctype.h>
 #include	<stdio.h>
+#include	<string.h>
+
 
 // Function test
 
@@ -90,23 +92,43 @@ void	test_isascii(void)
 void	test_isprint(void)
 {
 	int	i;
-
+	
 	printf("*-----------------ft_isprint-----------------*\n");
 	i = 0;
 	while (i <= 127)
 	{
-		if (ft_isprint(i) != 0 && (i < 32 || i > 126))
+		if ((ft_isprint(i) != 0 && (i < 32 || i > 126)) || (ft_isprint(i) == 0 && (i >= 32 && i <= 126)))
 		{
 			printf("KO, ft_isprint(%d) = %d ", i, ft_isprint(i));
 			printf("| isprint(%d) = %d\n", i, isprint(i));
-		}
-		if (ft_isprint(i) == 0 && (i >= 32 && i <= 126))
-		{
-			printf("KO, ft_isprint(%d) = %d ", i, ft_isprint(i));
-			printf("| isprint(%d) = %d\n", i, isprint(i));
+			return;
 		}
 		i++;
 	}
+	printf("OK.\n");
+}
+
+void	test_strlen(void)
+{
+	char	*ptr;
+	int	a;
+	int	b;
+
+	printf("*-----------------ft_strlen------------------*\n");
+	ptr = "aeho";
+	a = strlen(ptr);
+	b = ft_strlen(ptr);
+	if (a != b)
+	{
+		printf("KO, ft_strlen(%s) = %d ", ptr, ft_strlen(ptr));
+		printf("| strlen(%s) = %lu\n", ptr, strlen(ptr));
+	}
+	else
+	{
+		printf("OK.\n", ft_strlen(ptr));
+	}
+	
+	
 }
 
 int	main(void)
@@ -116,5 +138,6 @@ int	main(void)
 	test_isalnum();
 	test_isascii();
 	test_isprint();
+	test_strlen();
 	return (0);
 }
