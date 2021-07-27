@@ -169,6 +169,18 @@ void	test_memcpy(void)
 
 }
 
+void	test_memmove(void)
+{
+	char	*dest = "1234";
+	char	*src = "aeho";
+
+	printf("*-----------------ft_memmove-----------------*\n");
+	ft_memmove(&dest,&src,5);
+	if (strcmp(dest, src) == 0)
+		printf("OK.\n");
+	else
+		printf("KO. %s e %s\n", src, dest);
+}
 
 int	main(void)
 {
@@ -181,5 +193,6 @@ int	main(void)
 	test_memset();
 	test_bzero();
 	test_memcpy();
+	test_memmove();
 	return (0);
 }
