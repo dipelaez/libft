@@ -219,6 +219,21 @@ void	test_toupper(void)
 		printf("Deu ruim.\n");
 }
 
+void	test_strchr(void)
+{
+	char	*str = "aeho";
+	
+	printf("*-----------------ft_strchr-----------------*\n");
+	printf("strchr = %s\n", strchr(str,'-'));
+	printf("ft_strchr = %s\n", ft_strchr(str,'-'));
+
+	
+	// if (strchr(str,'\0') == ft_strchr(str,'\0'))
+	// 	printf("OK.\n");
+	// else
+	// 	printf("Deu ruim.\n");
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -234,5 +249,6 @@ int	main(void)
 	test_strlcpy();
 	test_tolower();
 	test_toupper();
+	test_strchr();
 	return (0);
 }
