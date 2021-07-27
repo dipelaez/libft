@@ -182,6 +182,19 @@ void	test_memmove(void)
 		printf("KO. %s e %s\n", src, dest);
 }
 
+void	test_strlcpy(void)
+{
+	char	dest[] = " ";
+	char	src[] = "aeho";
+	size_t	r;
+		
+	printf("*-----------------ft_strlcpy-----------------*\n");
+	if (ft_strlcpy(dest,src,5))
+		printf("OK.\n");
+	else
+		printf("KO.");
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -194,5 +207,6 @@ int	main(void)
 	test_bzero();
 	test_memcpy();
 	test_memmove();
+	test_strlcpy();
 	return (0);
 }
