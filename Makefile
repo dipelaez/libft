@@ -2,8 +2,27 @@ SRCS 	= ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprin
 
 OBJS	= ${SRCS:.c=.o}
 
-all:
-		gcc -c ${SRCS}
+NAME	=	libft.a
+
+CC		=	gcc
+
+RM		=	rm -f
+
+CFLAGS	=	-Wall -Werror -Wextra
+
+LIB		=	ar rc
+
+
+${NAME}:	
+		${CC} ${CFLAGS} -c ${SRCS}
+		${LIB} ${NAME} ${OBJS}
+
+all:	${NAME}
 
 clean:
-		rm *.o
+		${RM} ${OBJS}
+
+fclean:	clean
+		${RM} ${NAME}
+
+re:		fclean all
