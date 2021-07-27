@@ -195,6 +195,30 @@ void	test_strlcpy(void)
 		printf("KO.");
 }
 
+void	test_tolower(void)
+{
+	int	a;
+
+	printf("*-----------------ft_tolower-----------------*\n");
+	a = tolower('B');
+	if (a == ft_tolower('B'))
+		printf("OK.\n");
+	else
+		printf("Deu ruim.\n");
+}
+
+void	test_toupper(void)
+{
+	int	a;
+
+	printf("*-----------------ft_toupper-----------------*\n");
+	a = toupper('b');
+	if (a == ft_toupper('b'))
+		printf("OK.\n");
+	else
+		printf("Deu ruim.\n");
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -208,5 +232,7 @@ int	main(void)
 	test_memcpy();
 	test_memmove();
 	test_strlcpy();
+	test_tolower();
+	test_toupper();
 	return (0);
 }
