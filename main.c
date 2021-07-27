@@ -155,6 +155,21 @@ void	test_bzero(void)
 	
 }
 
+void	test_memcpy(void)
+{	
+	char	*dest = "1234";
+	char	*src = "aeho";
+
+	printf("*-----------------ft_memcpy------------------*\n");
+	ft_memcpy(&dest,&src,5);
+	if (strcmp(dest, src) == 0)
+		printf("OK.\n");
+	else
+		printf("KO. %s e %s\n", src, dest);
+
+}
+
+
 int	main(void)
 {
 	test_isalpha();
@@ -165,5 +180,6 @@ int	main(void)
 	test_strlen();
 	test_memset();
 	test_bzero();
+	test_memcpy();
 	return (0);
 }
