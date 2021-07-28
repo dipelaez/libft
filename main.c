@@ -223,8 +223,19 @@ void	test_strchr(void)
 {
 	char s[] = "tripouille";
 	
-	printf("*-----------------ft_strchr-----------------*\n");
+	printf("*-----------------ft_strchr------------------*\n");
 	if (strchr(s,'t' + 256) == ft_strchr(s,'t' + 256))
+		printf("OK.\n");
+	else
+		printf("Deu ruim.\n");
+}
+
+void	test_strrchr(void)
+{
+	char s[] = "plusultra";
+	
+	printf("*-----------------ft_strrchr-----------------*\n");
+	if (strrchr(s,'l') == ft_strrchr(s,'l'))
 		printf("OK.\n");
 	else
 		printf("Deu ruim.\n");
@@ -246,5 +257,6 @@ int	main(void)
 	test_tolower();
 	test_toupper();
 	test_strchr();
+	test_strrchr();
 	return (0);
 }
