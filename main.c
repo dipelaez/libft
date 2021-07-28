@@ -221,17 +221,17 @@ void	test_toupper(void)
 
 void	test_strchr(void)
 {
-	char	*str = "aeho";
+	char s[] = "tripouille";
 	
 	printf("*-----------------ft_strchr-----------------*\n");
-	printf("strchr = %s\n", strchr(str,'-'));
-	printf("ft_strchr = %s\n", ft_strchr(str,'-'));
+	printf("strchr = %s\n", strchr(s,'t' + 256));
+	printf("ft_strchr = %s\n", ft_strchr(s,'t' + 256));
 
 	
-	// if (strchr(str,'\0') == ft_strchr(str,'\0'))
-	// 	printf("OK.\n");
-	// else
-	// 	printf("Deu ruim.\n");
+	if (strchr(s,'t' + 256) == ft_strchr(s,'t' + 256))
+		printf("OK.\n");
+	else
+		printf("Deu ruim.\n");
 }
 
 int	main(void)
