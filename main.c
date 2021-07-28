@@ -254,6 +254,16 @@ void	test_strncmp(void)
 		printf("Deu ruim.\n");
 }
 
+void	test_memcmp(void)
+{
+	char s[] = {-128, 0, 127, 0};
+	char sCpy[] = {-128, 0, 127, 0};
+	char s2[] = {0, 0, 127, 0};
+	char s3[] = {0, 0, 42, 0};
+	printf("esse = %d\n", ft_memcmp(s, sCpy, 4));
+	printf("esse2 = %d\n", memcmp(s, sCpy, 4));
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -272,5 +282,6 @@ int	main(void)
 	test_strchr();
 	test_strrchr();
 	test_strncmp();
+	test_memcmp();
 	return (0);
 }
