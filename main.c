@@ -224,10 +224,6 @@ void	test_strchr(void)
 	char s[] = "tripouille";
 	
 	printf("*-----------------ft_strchr-----------------*\n");
-	printf("strchr = %s\n", strchr(s,'t' + 256));
-	printf("ft_strchr = %s\n", ft_strchr(s,'t' + 256));
-
-	
 	if (strchr(s,'t' + 256) == ft_strchr(s,'t' + 256))
 		printf("OK.\n");
 	else
