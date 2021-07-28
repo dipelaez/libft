@@ -5,7 +5,7 @@ char	*ft_strrchr(const	char *s, int	c)
 	int	i;
 
 	i = 0;
-	if (c> 127)
+	if (c > 127)
 		c %= 256;
 	while (*s)
 	{

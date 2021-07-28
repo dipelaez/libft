@@ -241,6 +241,19 @@ void	test_strrchr(void)
 		printf("Deu ruim.\n");
 }
 
+void	test_strncmp(void)
+{
+	char	s1[] = "aeho";
+	char	s2[] = "aeho12";
+
+	printf("*-----------------ft_strncmp-----------------*\n");
+
+	if (strncmp(s1,s2,4) == ft_strncmp(s1,s2,4))
+		printf("OK.\n");
+	else
+		printf("Deu ruim.\n");
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -258,5 +271,6 @@ int	main(void)
 	test_toupper();
 	test_strchr();
 	test_strrchr();
+	test_strncmp();
 	return (0);
 }
