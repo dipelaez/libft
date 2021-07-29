@@ -256,13 +256,17 @@ void	test_strncmp(void)
 
 void	test_memcmp(void)
 {
+	printf("*-----------------ft_memcmp-----------------*\n");
+	
 	char s[] = {-128, 0, 127, 0};
 	char sCpy[] = {-128, 0, 127, 0};
-	char s2[] = {0, 0, 127, 0};
-	char s3[] = {0, 0, 42, 0};
-	printf("esse = %d\n", ft_memcmp(s, sCpy, 4));
-	printf("esse2 = %d\n", memcmp(s, sCpy, 4));
+	
+	if (ft_memcmp(s, sCpy,3) == memcmp(s,sCpy,3))
+		printf("OK.\n");
+	else
+		printf("Deu ruim.\n");
 }
+
 
 int	main(void)
 {
