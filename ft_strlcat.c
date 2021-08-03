@@ -15,7 +15,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
     dst_len = dst_cpy - dst;
     buff_size = size - dst_len;
     if (buff_size == 0)
-        return (dst_len + ft_strlen(src_cpy));
+        return (dst_len + ft_strlen(src));
     while (*src_cpy != '\0')
     {
         if (buff_size != 1)
