@@ -11,11 +11,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return ((char *)big);
 	while (*big && (i < len))
 	{
-		if ((ft_strncmp(big,little,little_size) == 0) 
-				&& (i + little_size <= len))
+		if ((ft_strncmp (big, little, little_size) == 0)
+			&& (i + little_size <= len))
 			return ((char *)big);
 		big++;
-		i++;	
+		i++;
 	}
 	return (0);
 }

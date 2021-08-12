@@ -2,7 +2,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *i;
+	unsigned char	*i;
 
 	if (c > 127)
 		c %= 256;
@@ -11,7 +11,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if (*i == (unsigned char)c)
 			return (i);
-		i++;	
+		i++;
 	}
 	return (0);
 }
