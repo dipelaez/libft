@@ -2,11 +2,11 @@
 
 void	*ft_memcpy(void	*dest, const void	*src, size_t n)
 {
-	char		*a;
-	const char	*b;
+	char	*a;
+	char	*b;
 
-	a = dest;
-	b = src;
+	a = (char *)dest;
+	b = (char *)src;
 	while (n--)
 	{
 		*a++ = *b++;
