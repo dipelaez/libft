@@ -1,16 +1,70 @@
 #ifndef	LIBFT_H
-#define	LIBFT_H
+# define	LIBFT_H
 
-#include	<stdio.h>
-#include	<string.h>
+# define INT_MIN -2147483648
+# define INT_MAX 2147783647
+
+#include	<stddef.h>
+#include	<unistd.h>
 #include	<stdlib.h>
 
-int ft_isalpha(int  c);
-int	ft_isalnum(int	c);
-int	ft_isascii(int	c);
-int	ft_isdigit(int	c);
-int	ft_isprint(int	c);
+//Part 1 - Libc function
+
+/**
+ * @brief Checks if the passed character is alphabetic.
+ * 
+ * @param c This is the param to be checked.
+ * @return This function returns non-zero value if c is an alphabetic, else it 
+ * returns 0.
+*/
+int		ft_isalpha(int  c);
+
+/**
+ * @brief Checks for an alphanumeric character; it is equivalent to (isalpha(c) || isdigit(c)).
+ * 
+ * @param c This is the param to be checked.
+ * @return This function returns non-zero value if c is an alphanumeric, else it 
+ * returns 0.
+*/
+int		ft_isalnum(int	c);
+
+/**
+ * @brief Checks if the character is ASCII.
+ * 
+ * @param c This is the param to be checked.
+ * @return This function returns non-zero value if c is an ASCII, else it 
+ * returns 0.
+*/
+int		ft_isascii(int	c);
+
+/**
+ * @brief Checks for a digit (0 through 9).
+ * 
+ * @param c This is the param to be checked.
+ * @return This function returns non-zero value if c is a digit, else it 
+ * returns 0.
+*/
+int		ft_isdigit(int	c);
+
+/**
+ * @brief Checks for any printable character including space.
+ * 
+ * @param c This is the param to be checked.
+ * @return This function returns non-zero value if c is printable, else it 
+ * returns 0.
+*/
+int		ft_isprint(int	c);
+
+/**
+ * @brief Calculates the length of the string pointed to by s,
+ *  excluding the terminating null byte.
+ * 
+ * @param s This is the string whose lenght is to be found.
+ * @return Returns the number of characters in the string pointed to by s.
+*/
 size_t	ft_strlen(const char	*s);
+
+
 void	*ft_memset(void	*s, int	c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void	*dest, const void	*src, size_t n);
