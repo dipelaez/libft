@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dipelaez </var/mail/dipelaez>              +#+  +:+       +#+        */
+/*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 11:58:11 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/19 11:58:15 by dipelaez         ###   ########.fr       */
+/*   Created: 2021/08/19 13:52:32 by dipelaez          #+#    #+#             */
+/*   Updated: 2021/08/19 13:52:42 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
-#include    "unistd.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
