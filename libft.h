@@ -84,4 +84,15 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char	*s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
-#endif
+/**
+ * @brief Returns a new string, which is the result of the concatenation of 's1' and 's2'.
+ * 
+ * @param s1 String 1 
+ * @param s2 String 2.
+ * @return The new String. NULL if the allocation fails.
+*/
+char	*ft_strjoin(char const *s1, char const *s2);
+
+
+
+# endif
