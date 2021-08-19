@@ -9,7 +9,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	len_s = ft_strlen(s);
-	if (start < len)
+	if (start > len)
+		return (ft_strdup(""));
+	if (len_s < len)
 		len = len_s - start;
 	sub_s = (char *) malloc(len + 1);
 	if (!sub_s)
