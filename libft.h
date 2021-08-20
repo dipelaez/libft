@@ -93,6 +93,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 */
 char	*ft_strjoin(char const *s1, char const *s2);
 
-
+/**
+ * @brief Returns a copy of 's1' with the characters specified in 'set'
+ *  removed from the begining and the end of the string.
+ * 
+ * @param s1 String 
+ * @param set Characters to be trimmed.
+ * @return The trimmed string. NULL if the allocation fails.
+*/
+char	*ft_strtrim(char const *s1, char const *set);
 
 # endif
