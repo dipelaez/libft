@@ -125,4 +125,15 @@ char	**ft_split(char const *s, char c);
 */
 char	*ft_itoa(int n);
 
+/**
+ * @brief Applies the function 'f' to each character of the string 's' to create
+ * a new string resulting from successive applications of 'f'. 
+ * 
+ * @param s The string on which iterate.
+ * @param f The function to apply to each character. 
+ * @return The string created from the successive applications of 'f'.
+ * NULL if the allocation fails.
+*/
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
 # endif
