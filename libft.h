@@ -103,4 +103,26 @@ char	*ft_strjoin(char const *s1, char const *s2);
 */
 char	*ft_strtrim(char const *s1, char const *set);
 
+/**
+ * @brief Allocates and returns an array of strings obtained by splitting 's' 
+ * using the character 'c' as a delimiter. Array must be ended by a 
+ * NULL pointer. 
+ * 
+ * @param s The string to be split. 
+ * @param c The delimiter character.
+ * @return The array of new strings resulting from the split.
+ * NULL if the allocation fails.
+*/
+char	**ft_split(char const *s, char c);
+
+/**
+ * @brief Allocates and returns a string representing the integer received as an argument.
+ * Negative numbers must be handled. 
+ * 
+ * @param n The integer to convert. 
+ * @return The string representing the integer.
+ * NULL if the allocation fails.
+*/
+char	*ft_itoa(int n);
+
 # endif
