@@ -177,4 +177,14 @@ void ft_putstr_fd(char *s, int fd);
 */
 void ft_putendl_fd(char *s, int fd);
 
+/**
+ * @brief Outputs the integer 'n' to the given file
+ * descriptor. 
+ * 
+ * @param n The integer to output.
+ * @param fd The file descriptor on which to write. 
+ * @return None.
+*/
+void ft_putnbr_fd(int n, int fd);
+
 # endif
