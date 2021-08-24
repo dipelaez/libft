@@ -167,4 +167,14 @@ void ft_putchar_fd(char c, int fd);
 */
 void ft_putstr_fd(char *s, int fd);
 
+/**
+ * @brief Outputs the string 's' to the given file
+ * descriptor, followed by a newline. 
+ * 
+ * @param s The string to output.
+ * @param fd The file descriptor on which to write. 
+ * @return None.
+*/
+void ft_putendl_fd(char *s, int fd);
+
 # endif
