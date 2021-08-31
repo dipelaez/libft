@@ -6,7 +6,7 @@
 /*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 15:09:16 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/31 19:16:40 by dipelaez         ###   ########.fr       */
+/*   Updated: 2021/08/31 19:32:03 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	i = 0;
 	if (!s || !f)
-		return (0);
+		return;
 	while (s[i])
 	{
 		f(i, s + i);
