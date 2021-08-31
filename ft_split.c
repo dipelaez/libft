@@ -1,93 +1,91 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/31 18:15:52 by dipelaez          #+#    #+#             */
+/*   Updated: 2021/08/31 18:15:54 by dipelaez         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
 
-static int count_strings(char const *s, char c)
+static int		unleah(char **str, int size)
 {
-	size_t	i;
-	size_t	count;
-	size_t	len;
-
-	len = ft_strlen(s);
-	while (s[len - 1] == c)
-		len--;
-	i = 0;
-	while (s[i] == c)
-		i++;
-	count = 0;
-	while (s[i])
-	{
-		while (i < len)
-		{
-			if (s[i] == c && s[i - 1] != c)
-				count++;
-			i++;
-		}
-		return (count + 1);
-	}
-	return (count);
+	while (size--)
+		free(str[size]);
+	return (-1);
 }
 
-static void *get_str(char const *s, char c, int *i)
-{
-	char	*str;
-	int		j;
-	int		trim;
-	int		h;
-		
-	j = *i;
-	h = *i;
-	trim = 0;
-	while (s[j + trim] != '\0' && s[j + trim] == c)
-		trim++;
-	while (s[j + trim] != '\0' && s[j + trim] != c)
-		j++;
-	if (!(str = (char *) malloc((j - h + 1) * sizeof(char))))
-		return (0);
-	*i = j + trim;
-	ft_strlcpy(str, s + trim + h, j - h + 1);
-	// printf("Valor de J = %d\n Valor de I = %d\n", j, *i);
-	// printf("Valor de trim = %d\n", trim);
-	// printf("Valor de h = %d\n", h);
-	// printf("Str =%s=\n", str);
-	// printf("--------------------------------\n");
-	return (str);
-}
-
-char	**ft_split(char const *s, char c)
+static int		count_words(const char *str, char charset)
 {
 	int	i;
-	size_t	str_nbr;
-	size_t	count;
-	char	**array;
+	int	words;
 
-	if (!s)
-		return (0);
-	str_nbr = count_strings(s, c);
-	if (!(array = (char **) malloc((str_nbr + 1) * sizeof(char *))))
-		return (0);
-	count = 0;
+	words = 0;
 	i = 0;
-	while (count < str_nbr)
+	while (str[i] != '\0')
 	{
-		array[count++] = get_str(s, c, &i); //fazer função para pegar array
+		if ((str[i + 1] == charset || str[i + 1] == '\0') == 1
+				&& (str[i] == charset || str[i] == '\0') == 0)
+			words++;
+		i++;
 	}
-	array[count] = 0;
-	return (array);
+	return (words);
 }
 
-// int	main(void)
-// {
-// 	char *str;
-// 	char c;
-// 	char **arr;
+static void		write_word(char *dest, const char *from, char charset)
+{
+	int	i;
 
-// 	str = "  tripouille 42 ";
-// 	c = ' ';
-// 	// printf("tem que vir zero mas vem = %d\n", count_strings(str, c));
-// 	arr = ft_split(str, c);
-// 	printf("Teste: =%s=\n", arr[0]);
-// 	printf("Teste: =%s=\n", arr[1]);
-// 	printf("Teste: =%s=\n", arr[2]);
-// 	// printf("Teste: =%s=\n", arr[3]);
-// 	return (0);
-// }
+	i = 0;
+	while ((from[i] == charset || from[i] == '\0') == 0)
+	{
+		dest[i] = from[i];
+		i++;
+	}
+	dest[i] = '\0';
+}
+
+static int		write_split(char **split, const char *str, char charset)
+{
+	int		i;
+	int		j;
+	int		word;
+
+	word = 0;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] == charset || str[i] == '\0') == 1)
+			i++;
+		else
+		{
+			j = 0;
+			while ((str[i + j] == charset || str[i + j] == '\0') == 0)
+				j++;
+			if ((split[word] = (char*)malloc(sizeof(char) * (j + 1))) == NULL)
+				return (unleah(split, word - 1));
+			write_word(split[word], str + i, charset);
+			i += j;
+			word++;
+		}
+	}
+	return (0);
+}
+
+char			**ft_split(const char *str, char c)
+{
+	char	**res;
+	int		words;
+
+	words = count_words(str, c);
+	if ((res = (char**)malloc(sizeof(char*) * (words + 1))) == NULL)
+		return (NULL);
+	res[words] = 0;
+	if (write_split(res, str, c) == -1)
+		return (NULL);
+	return (res);
+}
