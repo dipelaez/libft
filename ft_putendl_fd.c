@@ -6,16 +6,16 @@
 /*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 16:18:56 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/24 16:29:18 by dipelaez         ###   ########.fr       */
+/*   Updated: 2021/08/31 19:06:49 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (s[i])
 	{

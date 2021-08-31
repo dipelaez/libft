@@ -6,13 +6,13 @@
 /*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 17:15:26 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/24 17:47:43 by dipelaez         ###   ########.fr       */
+/*   Updated: 2021/08/31 19:07:14 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char			sign;
 	unsigned int	nb_unsigned;

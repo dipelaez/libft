@@ -6,7 +6,7 @@
 /*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:51:37 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/19 13:51:38 by dipelaez         ###   ########.fr       */
+/*   Updated: 2021/08/31 19:04:44 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memmove(void	*dest, const void	*src, size_t	n)
 			*(char *)(dest + n) = *(char *)(src + n);
 	else if (dest && src)
 	{
-		while ( i < n)
+		while (i < n)
 		{
 			*(char *)(dest + i) = *(char *)(src + i);
 			i++;
