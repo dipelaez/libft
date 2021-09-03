@@ -6,7 +6,7 @@
 /*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:53:11 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/19 13:53:12 by dipelaez         ###   ########.fr       */
+/*   Updated: 2021/09/03 18:14:51 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcpy(char	*dst, const char	*src, size_t	size)
 {
 	unsigned int	i;
 
-	if (!src)
+	if (!src || !dst)
 		return (0);
 	i = 0;
 	if (size > 0)
