@@ -6,7 +6,7 @@
 /*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 16:07:21 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/31 18:55:34 by dipelaez         ###   ########.fr       */
+/*   Updated: 2021/09/05 11:01:12 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{

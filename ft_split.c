@@ -6,7 +6,7 @@
 /*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 18:15:52 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/31 19:14:00 by dipelaez         ###   ########.fr       */
+/*   Updated: 2021/09/05 11:00:48 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ char	**ft_split(const char *str, char c)
 	char	**res;
 	int		words;
 
+	if (!str)
+		return (NULL);
 	words = count_words(str, c);
 	res = (char **) malloc(sizeof(char *) * (words + 1));
 	if (!res)
