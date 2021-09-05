@@ -6,7 +6,7 @@
 /*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 19:30:25 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/31 19:30:27 by dipelaez         ###   ########.fr       */
+/*   Updated: 2021/09/04 22:29:29 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ size_t	ft_strlen(const char	*s);
 void	*ft_memset(void	*s, int	c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void	*dest, const void	*src, size_t n);
-void	*ft_memmove(void	*dest, const void	*src, size_t	n);
-size_t	ft_strlcpy(char	*dst, const char	*src, size_t	size);
+void	*ft_memmove(void *dest, const void *src, size_t	n);
+size_t	ft_strlcpy(char	*dst, char *src, size_t dstsize);
 int		ft_toupper(int	c);
 int		ft_tolower(int	c);
 char	*ft_strchr(const char	*s, int	c);

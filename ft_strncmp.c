@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lamorim <lamorim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 13:53:26 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/09/03 20:29:49 by dipelaez         ###   ########.fr       */
+/*   Created: 2021/08/02 14:37:18 by lamorim           #+#    #+#             */
+/*   Updated: 2021/08/18 23:27:45 by lamorim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
-	
+	size_t	i;
+
 	i = 0;
 	while (i < n && (s1[i] || s2[i]))
 	{

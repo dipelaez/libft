@@ -3,60 +3,67 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lamorim <lamorim@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/24 15:09:02 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/31 19:03:17 by dipelaez         ###   ########.fr       */
+/*   Created: 2021/08/16 14:13:31 by lamorim           #+#    #+#             */
+/*   Updated: 2021/08/17 18:52:51 by lamorim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isnegative(int n)
-{
-	if (n < 0)
-	{
-		n = n * -1;
-		return (1);
-	}
-	return (0);
-}
-
-static long int	ft_len(int n)
-{
-	int	i;
-	int	tmp;
-
-	i = 2;
-	tmp = n;
-	while (tmp / 10)
-	{	
-		i++;
-		tmp /= 10;
-	}
-	return (i);
-}
+static int	ft_count_digit(long int c);
+static char	*ft_return_str(char *str, int i, long int n, int signal);
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	int		sign;
-	char	*str;
+	char		*str_n;
+	int			signal;
+	long int	cpy_n;
+	int			count;
+	int			i;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	sign = ft_isnegative(n);
-	len = ft_len(n) + sign;
-	str = (char *) malloc(sizeof(char) * len);
-	if (!str)
-		return (NULL);
-	str[--len] = '\0';
-	while (len--)
+	signal = 0;
+	cpy_n = n;
+	if (n == 0)
+		return (ft_strdup("0"));
+	else if (n < 0)
 	{
-		str[len] = n % 10 + '0';
-		n = n / 10;
+		cpy_n *= -1;
+		signal = 1;
 	}
-	if (sign == 1)
-		str[0] = '-';
+	count = ft_count_digit(cpy_n);
+	str_n = (char *) malloc(count + signal + 1);
+	if (str_n == NULL)
+		return (NULL);
+	i = count + signal;
+	str_n[i] = '\0';
+	i -= 1;
+	return (ft_return_str(str_n, i, cpy_n, signal));
+}
+
+static int	ft_count_digit(long int c)
+{
+	int	count;
+
+	count = 0;
+	while (c > 0)
+	{
+		c /= 10;
+		count++;
+	}
+	return (count);
+}
+
+static char	*ft_return_str(char *str, int i, long int n, int signal)
+{
+	while (i >= 0)
+	{
+		str[i] = n % 10 + '0';
+		if (i == 0 && signal == 1)
+			str[i] = '-';
+		i--;
+		n /= 10;
+	}
 	return (str);
 }
